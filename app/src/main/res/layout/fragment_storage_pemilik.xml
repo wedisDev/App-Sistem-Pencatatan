@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.StorageFragmentPemilik"
+    android:layout_marginTop="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dataMaster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Data Master"
+            android:textColor="@color/text"
+            android:textSize="26dp" />
+
+        <!--card data pakan-->
+        <LinearLayout
+            android:id="@+id/cardDataPakan"
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/dataMaster"
+            android:background="@drawable/bg_ayam"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Data Pakan"
+                android:textColor="@color/soft"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/salad" />
+        </LinearLayout>
+
+        <!--card data karyawan-->
+        <LinearLayout
+            android:id="@+id/cardDataKaryawan"
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/dataMaster"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_ayam"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Data Karyawan"
+                android:textColor="@color/soft"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/karyawan" />
+        </LinearLayout>
+
+        <!--card data ternak-->
+        <LinearLayout
+            android:id="@+id/cardDataTernak"
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/cardDataPakan"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_ayam"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Data Ternak"
+                android:textColor="@color/soft"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/chicken" />
+        </LinearLayout>
+
+        <!--card data kandang-->
+        <LinearLayout
+            android:id="@+id/cardDataKandang"
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/cardDataKaryawan"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_ayam"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Data Kandang"
+                android:textColor="@color/soft"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/kandang" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

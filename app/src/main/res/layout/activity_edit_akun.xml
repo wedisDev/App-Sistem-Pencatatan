@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrasi"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Edit Akun"
+        android:textColor="@color/text"
+        android:textSize="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nama"
+        android:textSize="18dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="text"
+        android:background="@drawable/bg_input_soft"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/primarynd"
+        android:hint="Nama Anda"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nomor Telepon"
+        android:textSize="18dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+    <EditText
+        android:id="@+id/noTelp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="number"
+        android:background="@drawable/bg_input_soft"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/primarynd"
+        android:hint="Nomor Telepon Anda"
+        android:textColor="@color/primary"/>
+
+    <Button
+        android:id="@+id/edit_akun"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary"
+        android:text="EDIT AKUN"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_bold"/>
+
+</LinearLayout>

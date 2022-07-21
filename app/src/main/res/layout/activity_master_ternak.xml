@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.masterTernak.MasterTernak"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+            <TextView
+                android:id="@+id/subjudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Data Master"
+                android:textColor="@color/text"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subjudul"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Periode Ternak"
+                android:textColor="@color/text"
+                android:textSize="26dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTernak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/judul"
+                android:layout_marginTop="19dp" />
+
+            <Button
+                android:id="@+id/btnTernak"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/recyclerTernak"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/primary"
+                android:text="tambah periode ternak" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

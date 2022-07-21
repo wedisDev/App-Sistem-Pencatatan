@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/bg_soft"
+    android:layout_marginBottom="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/ketstock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light_italic"
+            android:text="Stock Pakan Ayam"
+            android:textColor="@color/primarynd"/>
+
+        <TextView
+            android:id="@+id/ketkodepakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ketstock"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Kode Pakan "
+            android:textColor="@color/text"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/tiwa1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ketkodepakan"
+            android:layout_below="@id/ketstock"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": "
+            android:textColor="@color/text"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/nama_pakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ketstock"
+            android:layout_toRightOf="@id/tiwa1"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="NH-810"
+            android:textColor="@color/text"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/stok_pakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ketkodepakan"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="10"
+            android:textColor="@color/primary"
+            android:textSize="36dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ketkodepakan"
+            android:layout_toRightOf="@id/stok_pakan"
+            android:fontFamily="@font/poppins"
+            android:text="Kg"
+            android:textColor="@color/primarynd"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

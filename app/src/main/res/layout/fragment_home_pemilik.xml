@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.HomeFragmentPemilik"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="60dp">
+
+            <!--tanggal-->
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_date"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="tanggal"
+                android:textColor="@color/soft"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/cekdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tanggal"
+                android:fontFamily="@font/poppins"
+                android:text="Sudah Cek Data Harian Hari Ini?"
+                android:textSize="20dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cekdata"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tanggal"
+                android:backgroundTint="@color/primary"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Cek Data" />
+
+            <TextView
+                android:id="@+id/statistik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tanggal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Statistik"
+                android:textColor="@color/text"
+                android:textSize="18dp" />
+
+            <!--statistik jumlah ayam-->
+            <LinearLayout
+                android:id="@+id/statistikAyam"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statistik"
+                android:background="@drawable/bg_ayam"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Jumlah Ayam"
+                    android:textColor="@color/soft" />
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/chicken" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="12.000 Ekor"
+                    android:textColor="@color/soft"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+            <!--statistik jumlah pakan-->
+
+            <LinearLayout
+                android:id="@+id/statistikPakan"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statistik"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="33dp"
+                android:layout_marginRight="-3dp"
+                android:layout_toRightOf="@id/statistikAyam"
+                android:background="@drawable/bg_ayam"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Jumlah Pakan"
+                    android:textColor="@color/soft" />
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/salad" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/stok_pakan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="24"
+                        android:textColor="@color/soft"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text=" Kg"
+                        android:textColor="@color/soft"
+                        android:textSize="22dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ternak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statistikAyam"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Ternak Yang Berlangsung"
+                android:textColor="@color/text"
+                android:textSize="18dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTernak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ternak"
+                android:layout_marginTop="9dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

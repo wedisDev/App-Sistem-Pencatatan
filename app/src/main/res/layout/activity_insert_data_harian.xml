@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrasi"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Data Harian"
+        android:textColor="@color/text"
+        android:textSize="13dp" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01 April 2022"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Hari"
+                android:textSize="13dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins"/>
+            <EditText
+                android:id="@+id/hari"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:background="@drawable/bg_input_soft"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/primarynd"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Umur Ayam"
+                android:textSize="13dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins"/>
+            <EditText
+                android:id="@+id/umurAyam"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:background="@drawable/bg_input_soft"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/primarynd"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Berat Badan"
+                android:textSize="13dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins"/>
+            <EditText
+                android:id="@+id/beratBadan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:background="@drawable/bg_input_soft"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/primarynd"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sisa Ayam"
+        android:textSize="13dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+    <EditText
+        android:id="@+id/sisaAyam"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="number"
+        android:background="@drawable/bg_input_soft"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/primarynd"
+        android:textColor="@color/primary"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Kode Pakan"
+                android:textSize="13dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins"/>
+            <EditText
+                android:id="@+id/kodePakan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:background="@drawable/bg_input_soft"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/primarynd"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Jumlah Pakan"
+                android:textSize="13dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins"/>
+            <EditText
+                android:id="@+id/jumlahPakan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:background="@drawable/bg_input_soft"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/primarynd"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Jumlah Kaling"
+        android:textSize="13dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+
+    <EditText
+        android:id="@+id/jmlKaling"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input_soft"
+        android:textColorHint="@color/primarynd"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Jumlah Mati"
+        android:textSize="13dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+
+    <EditText
+        android:id="@+id/jmlMati"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input_soft"
+        android:textColorHint="@color/primarynd"
+        android:textColor="@color/primary"/>
+
+    <Button
+        android:id="@+id/simpan"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary"
+        android:text="SIMPAN DATA"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary"
+        android:text="kembali"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_bold"/>
+
+</LinearLayout>

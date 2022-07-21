@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_outline_home_24"/>
+    <item
+        android:id="@+id/nav_data"
+        android:title="Data"
+        android:icon="@drawable/ic_outline_data_usage_24"/>
+    <item
+        android:id="@+id/nav_chart"
+        android:title="Chart"
+        android:icon="@drawable/ic_outline_bar_chart_24"/>
+    <item
+        android:id="@+id/nav_storage"
+        android:title="Storage"
+        android:icon="@drawable/ic_baseline_storage_24"/>
+
+</menu>

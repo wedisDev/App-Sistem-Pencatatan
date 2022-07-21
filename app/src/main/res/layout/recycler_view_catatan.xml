@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_white"
+    android:backgroundTint="@color/soft"
+    android:id="@+id/cardView"
+    android:layout_marginBottom="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/umur"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Umur Ayam"
+                android:textColor="@color/text"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/numberUmur"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="1"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:textSize="40sp"/>
+
+            <TextView
+                android:id="@+id/tglLahir"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Umur Ayam"
+                android:textColor="@color/text"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/linear">
+
+            <!--  Jabatan  -->
+            <TextView
+                android:id="@+id/ket_jabatan"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Sisa Ayam"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/tiwa1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ket_jabatan"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/sisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa1"
+                android:fontFamily="@font/poppins"
+                android:text="12"
+                android:textColor="@color/text" />
+
+            <!--  Nomor Telepon  -->
+            <TextView
+                android:id="@+id/ket_notelp"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_jabatan"
+                android:fontFamily="@font/poppins"
+                android:text="Pakan"
+                android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tiwa2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_jabatan"
+                android:layout_toRightOf="@id/ket_notelp"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/pakan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_jabatan"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa2"
+                android:fontFamily="@font/poppins"
+                android:text="5"
+                android:textColor="@color/text" />
+
+            <!--  Username  -->
+            <TextView
+                android:id="@+id/ket_email"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_notelp"
+                android:fontFamily="@font/poppins"
+                android:text="Kode Pakan"
+                android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tiwa3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_notelp"
+                android:layout_toRightOf="@id/ket_email"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/kode_pakan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pakan"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa3"
+                android:fontFamily="@font/poppins"
+                android:text="dheva"
+                android:textColor="@color/text" />
+
+            <!--  Password  -->
+            <TextView
+                android:id="@+id/ket_status"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_email"
+                android:fontFamily="@font/poppins"
+                android:text="Jumlah mati"
+                android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tiwa4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_email"
+                android:layout_toRightOf="@id/ket_status"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/jml_mati"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kode_pakan"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa4"
+                android:fontFamily="@font/poppins"
+                android:text="Aktif"
+                android:textColor="@color/text" />
+            <!--  Password  -->
+            <TextView
+                android:id="@+id/ketJumlahkaling"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket_status"
+                android:fontFamily="@font/poppins"
+                android:text="Jumlah kaling"
+                android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tiwa5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jml_mati"
+                android:layout_toRightOf="@id/ket_status"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/jml_kaling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jml_mati"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa5"
+                android:fontFamily="@font/poppins"
+                android:text="Aktif"
+                android:textColor="@color/text" />
+            <!--  Password  -->
+            <TextView
+                android:id="@+id/berat"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ketJumlahkaling"
+                android:fontFamily="@font/poppins"
+                android:text="Berat Badan"
+                android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tiwa6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tiwa5"
+                android:layout_toRightOf="@id/ket_status"
+                android:fontFamily="@font/poppins"
+                android:text=":"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/berat_badan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jml_kaling"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tiwa6"
+                android:fontFamily="@font/poppins"
+                android:text="Aktif"
+                android:textColor="@color/text" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.masterpakan.UpdatePakan"
+    android:orientation="vertical"
+    android:background="@color/swhite"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Pakan Masuk"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/text"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <!--tanggal-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Masuk"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/tanggal_masuk"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:background="@drawable/bg_input"
+            android:fontFamily="@font/poppins"
+            android:hint="Tanggal Mulai"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/text"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/tanggal_masuk"
+            android:background="@drawable/bg_input"
+            android:elevation="5dp"
+            android:src="@drawable/ic_baseline_date_range_24" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <!--kode pakan-->
+        <LinearLayout
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kode Pakan"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/text"
+                android:textSize="16dp"/>
+            <Spinner
+                android:id="@+id/kode_pakan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="name"/>
+        </LinearLayout>
+
+        <!--kode pakan-->
+        <LinearLayout
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jumlah (Kg)"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/text"
+                android:textSize="16dp"/>
+            <EditText
+                android:id="@+id/pakan_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:background="@drawable/bg_input"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/primary"
+        android:text="update stok" />
+    <Button
+        android:id="@+id/btnKembali"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/soft"
+        android:textColor="@color/text"
+        android:text="kembali" />
+
+</LinearLayout>

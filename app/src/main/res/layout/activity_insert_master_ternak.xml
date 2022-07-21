@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.masterTernak.InsertMasterTernak"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@color/swhite">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Periode Ternak"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/text"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <!--tanggal-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Mulai"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/tanggal_datang"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:fontFamily="@font/poppins"
+            android:hint="Tanggal Mulai"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/text" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/tanggal_datang"
+            android:background="@drawable/bg_input"
+            android:elevation="5dp"
+            android:src="@drawable/ic_baseline_date_range_24" />
+    </RelativeLayout>
+
+    <!--jumlah bibit-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Bibit"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/jumlah_bibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text"
+        android:hint="Jumlah Bibit"/>
+
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/primary"
+        android:text="tambah periode" />
+    <Button
+        android:id="@+id/btnKembali"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/soft"
+        android:textColor="@color/text"
+        android:text="kembali" />
+
+</LinearLayout>

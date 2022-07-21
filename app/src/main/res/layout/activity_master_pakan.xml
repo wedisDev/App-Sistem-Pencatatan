@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.masterpakan.MasterPakan"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+            <TextView
+                android:id="@+id/subjudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Master"
+                android:textColor="@color/text"
+                android:fontFamily="@font/poppins"
+                android:textSize="16dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subjudul"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Pakan Harian dan Stok"
+                android:textColor="@color/text"
+                android:textSize="26dp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerStock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/judul"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_date"
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/recyclerStock"
+                android:backgroundTint="@color/primary"
+                android:text="update stock"
+                android:layout_marginTop="10dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

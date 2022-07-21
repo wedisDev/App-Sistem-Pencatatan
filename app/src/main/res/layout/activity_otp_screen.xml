@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Verifikasi Akun"
+        android:textColor="@color/text"
+        android:textSize="36dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kode Verifikasi akan di kirimkan melalui nomor telpon "
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textColor="@color/primarynd"
+        android:fontFamily="@font/poppins"
+        android:layout_marginBottom="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/otp1"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:textSize="28sp"
+            android:maxLength="1"
+            android:gravity="center"
+            />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/otp2"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/otp3"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/otp4"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/otp5"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/otp6"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:inputType="number"
+            android:background="@drawable/bg_input_soft"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/primarynd"
+            android:textColor="@color/primary"
+            android:layout_weight="1"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/primary"
+        android:text="VERIFIKASI AKUN"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Tidak mendapatkan kode?"
+            android:textColor="@color/primarynd" />
+
+        <TextView
+            android:id="@+id/goToRegistrasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Kirim Ulang"
+            android:textColor="@color/primary" />
+    </LinearLayout>
+
+</LinearLayout>

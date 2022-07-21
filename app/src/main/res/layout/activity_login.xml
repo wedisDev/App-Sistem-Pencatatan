@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Selamat Datang"
+        android:textColor="@color/text"
+        android:textSize="42dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukan username dan password anda untuk masuk ke akun anda"
+        android:textSize="16dp"
+        android:textColor="@color/primarynd"
+        android:fontFamily="@font/poppins"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Email"
+        android:textSize="18dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="text"
+        android:background="@drawable/bg_input_soft"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/primarynd"
+        android:hint="Email"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Password"
+        android:textSize="18dp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppins"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input_soft"
+        android:textColorHint="@color/primarynd"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/primary"/>
+
+    <CheckBox
+        android:id="@+id/showPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="Show Password"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/goToRegistrasi"
+            android:fontFamily="@font/poppins_light"
+            android:text="Belum punya akun?"
+            android:textColor="@color/primarynd" />
+
+        <TextView
+            android:id="@+id/goToRegistrasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Registrasi"
+            android:textColor="@color/primary" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/primary"
+        android:text="LOGIN"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_bold"/>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@drawable/bg_soft"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/rv">
+
+    <TextView
+        android:id="@+id/tanggal_datang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="09-07-2022"
+        android:textColor="@color/text"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Bibit :"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/jumlah_bibit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100.000"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Ekor"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+</LinearLayout>

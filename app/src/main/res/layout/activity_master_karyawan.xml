@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pemilik.masterkaryawan.MasterKaryawan"
+    android:background="@color/soft"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        android:layout_alignParentLeft="true" />
+    <TextView
+        android:id="@+id/subjudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Master"
+        android:textColor="@color/text"
+        android:fontFamily="@font/poppins"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_below="@id/subjudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Karyawan"
+        android:textColor="@color/text"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="26dp"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerKaryawan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/judul"
+        android:layout_marginTop="9dp" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/primary"
+        android:text="Tambah Data Karyawan" />
+
+</RelativeLayout>
