@@ -43,7 +43,7 @@ public class MainActivityKaryawan extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case R.id.nav_home:
-                        selectedFragment = new HomeFragmentKaryawan();
+                        selectedFragment = new HomeFragmentPemilik();
                         break;
 
                     case R.id.nav_data:

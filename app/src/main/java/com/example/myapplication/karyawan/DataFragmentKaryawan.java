@@ -1,14 +1,41 @@
 package com.example.myapplication.karyawan;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.myapplication.DBContract;
 import com.example.myapplication.R;
+import com.example.myapplication.pemilik.Adapter;
+import com.example.myapplication.pemilik.AdapterData;
+import com.example.myapplication.pemilik.DataFragmentPemilik;
+import com.example.myapplication.pemilik.ModelClass;
+import com.example.myapplication.pemilik.masterTernak.ModelClassMasterTernak;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +52,14 @@ public class DataFragmentKaryawan extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    String DATA_JSON_STRING, data_json_string;
+
+    private RecyclerView recyclerView;
+    private ArrayList<ModelClass> dataholder;
+    private Adapter adapter;
+    ArrayList<ModelClassMasterTernak> arrayList = new ArrayList<>();
+    AdapterData adapterTernak;
 
     public DataFragmentKaryawan() {
         // Required empty public constructor
@@ -61,6 +96,103 @@ public class DataFragmentKaryawan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_data_karyawan, container, false);
+        View view = inflater.inflate(R.layout.fragment_data_karyawan, container, false);
+
+        recyclerView = view.findViewById(R.id.recyclerTernak);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        adapterTernak = new AdapterData(getActivity(), arrayList);
+        recyclerView.setAdapter(adapterTernak);
+
+        getJSON();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                readData();
+            }
+        }, 100);
+
+        return view;
+    }
+
+    private void readData() {
+        if (checkNetworkConnection()) {
+//            arrayList.clear();
+            try {
+                JSONObject object = new JSONObject(data_json_string);
+                JSONArray serverResponse = object.getJSONArray("server_response");
+                String tanggal_datang, jumlah_bibit, id_periode;
+
+                for (int i=0; i < serverResponse.length(); i++){
+                    JSONObject jsonObject = serverResponse.getJSONObject(i);
+                    tanggal_datang = jsonObject.getString("tanggal_datang");
+                    jumlah_bibit = jsonObject.getString("jumlah_bibit");
+                    id_periode = jsonObject.getString("id_periode");
+
+                    arrayList.add(new ModelClassMasterTernak(tanggal_datang, jumlah_bibit, id_periode));
+                }
+
+                adapterTernak.notifyDataSetChanged();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean checkNetworkConnection() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.isConnected());
+    }
+
+    public void getJSON() {
+        new DataFragmentKaryawan.BackgroundTask().execute();
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    class BackgroundTask extends AsyncTask<Void, Void, String> {
+
+        String json_url;
+
+        @Override
+        protected void onPreExecute() {
+            json_url = DBContract.SERVER_TAMPIL_MASTER_TERNAK;
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                URL url = new URL(json_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while ((DATA_JSON_STRING = bufferedReader.readLine()) != null) {
+                    stringBuilder.append(DATA_JSON_STRING + "\n");
+                }
+
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return  stringBuilder.toString().trim();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            data_json_string = result;
+        }
     }
 }

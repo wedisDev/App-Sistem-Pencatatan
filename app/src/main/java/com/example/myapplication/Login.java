@@ -174,8 +174,9 @@ public class Login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
+            checkUserAccessLevel(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//            finish();
         }
     }
 

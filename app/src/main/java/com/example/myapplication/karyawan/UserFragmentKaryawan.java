@@ -5,15 +5,22 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.myapplication.Login;
 import com.example.myapplication.R;
 import com.example.myapplication.Registrasi;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,14 @@ import com.google.firebase.auth.FirebaseAuth;
 public class UserFragmentKaryawan extends Fragment {
 
     private Button btnLogout;
+
+    private TextView nama;
+    private FirebaseUser firebaseUser;
+
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
+    TextView tvPhone, tvEmail, tvUsername, tvPassword;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,6 +87,15 @@ public class UserFragmentKaryawan extends Fragment {
 
         btnLogout = view.findViewById(R.id.btnLogout);
 
+        fStore = FirebaseFirestore.getInstance();
+
+        nama = view.findViewById(R.id.nama);
+        btnLogout = view.findViewById(R.id.btnLogout);
+        tvPhone = view.findViewById(R.id.phoneNumber);
+        tvEmail = view.findViewById(R.id.email);
+        tvUsername = view.findViewById(R.id.username);
+        tvPassword = view.findViewById(R.id.password);
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +104,41 @@ public class UserFragmentKaryawan extends Fragment {
                 startActivity(intent);
             }
         });
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null){
+            Log.d("TAG ", "onCreate: "+firebaseUser.getUid());
+            checkUserAccessLevel(firebaseUser.getUid());
+        }
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null){
+            Log.d("TAG ", "onCreate: "+firebaseUser.getUid());
+            checkUserAccessLevel(firebaseUser.getUid());
+        }
+    }
+
+    private void checkUserAccessLevel(String uid) {
+        DocumentReference df =  fStore.collection("Users").document(uid);
+
+        //extract the data from the document
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                Log.d("TAG", "onSuccess" + documentSnapshot.getData());
+//
+                nama.setText(documentSnapshot.getString("nama"));
+                tvPhone.setText(documentSnapshot.getString("noTelp"));
+                tvEmail.setText(documentSnapshot.getString("email"));
+                tvUsername.setText(documentSnapshot.getString("nama"));
+                tvPassword.setText("*****");
+            }
+        });
     }
 }

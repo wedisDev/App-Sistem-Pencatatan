@@ -69,10 +69,14 @@ public class InsertDataHarian extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                String sNama = nama.getText().toString();
-//                String snoTelp = noTelp.getText().toString();
-//                String sEmail = email.getText().toString();
-//                String sPassword = password.getText().toString();
+//                String dataHari = hari.getText().toString();
+//                String dataUmurAyam = umurAyam.getText().toString();
+//                String dataBerat = beratBadan.getText().toString();
+//                String dataSisaAyam = sisaAyam.getText().toString();
+//                String dataKodePakan = kodePakan.getText().toString();
+//                String dataJumlahPakan = jumlahPakan.getText().toString();
+//                String dataJmlKaling = jmlKaling.getText().toString();
+//                String dataJmlMati = jmlMati.getText().toString();
 //
 //
 //                CreateDataToServer(sNama, snoTelp, sEmail, sPassword);
