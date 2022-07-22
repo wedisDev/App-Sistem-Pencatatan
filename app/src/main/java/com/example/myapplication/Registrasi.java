@@ -137,7 +137,6 @@ public class Registrasi extends AppCompatActivity {
                     });
                 }
 
-
                 String sNama = nama.getText().toString();
                 String snoTelp = noTelp.getText().toString();
                 String sEmail = email.getText().toString();
@@ -145,8 +144,14 @@ public class Registrasi extends AppCompatActivity {
 
                 CreateDataToServer(sNama, snoTelp, sEmail, sPassword);
 
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                String newPhone = snoTelp.substring(0,0)+"+62"+snoTelp.substring(1);
 
+//                startActivity(new Intent(getApplicationContext(), Login.class));
+                Intent i = new Intent(getApplicationContext(), OtpScreen.class);
+                i.putExtra("phoneNumber", newPhone);
+                startActivity(i);
+
+                FirebaseAuth.getInstance().signOut();
             }
         });
 

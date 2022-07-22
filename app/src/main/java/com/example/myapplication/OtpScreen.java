@@ -31,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 public class OtpScreen extends AppCompatActivity {
 
     static String phoneNumber;
-    static String access;
 
     boolean valid = true;
     FirebaseAuth fAuth;
@@ -69,17 +68,18 @@ public class OtpScreen extends AppCompatActivity {
         btnVerifikasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("TAG ", "onClick: "+otpCode);
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode, otpCode);
-                SigninWithPhone(credential);
+                if (otpCode != null) {
+                    Log.d("TAG ", "onClick: "+otpCode);
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode, otpCode);
+                    SigninWithPhone(credential);
+                } else {
+                    Toast.makeText(OtpScreen.this, "OTP Kosong", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         Intent intent = getIntent();
         phoneNumber = intent.getStringExtra("phoneNumber");
-        access = intent.getStringExtra("access");
-
-        Log.d("TAG", "onCreate: "+phoneNumber+" "+access);
 
         phoneNumberAuth();
     }
@@ -89,20 +89,11 @@ public class OtpScreen extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("TAG,", "onComplete: success "+access);
                         if (task.isSuccessful()) {
-                            if (Objects.equals(access, "pemilik")){
-                                // user is admin
-                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(i);
-                                finish();
-                            }
-
-                            if (Objects.equals(access, "karyawan")){
-                                Intent i = new Intent(getApplicationContext(), MainActivityKaryawan.class);
-                                startActivity(i);
-                                finish();
-                            }
+                            Intent i = new Intent(getApplicationContext(), Login.class);
+                            startActivity(i);
+                            finish();
+                            FirebaseAuth.getInstance().signOut();
                         } else {
                             Toast.makeText(getApplicationContext(),"Incorrect OTP",Toast.LENGTH_SHORT).show();
                         }

@@ -135,24 +135,22 @@ public class Login extends AppCompatActivity {
                 assert phoneNumber != null;
                 String newPhone = phoneNumber.substring(0,0)+"+62"+phoneNumber.substring(1);
 
-                Log.d("TAG ", "onSuccess: "+newPhone);
-
                 //identify user access level
                 if (documentSnapshot.getString("isPemilik") != null){
                     // user is admin
-//                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    Intent i = new Intent(getApplicationContext(), OtpScreen.class);
-                    i.putExtra("phoneNumber", phoneNumber);
-                    i.putExtra("access", "pemilik");
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+//                    Intent i = new Intent(getApplicationContext(), OtpScreen.class);
+//                    i.putExtra("phoneNumber", phoneNumber);
+//                    i.putExtra("access", "pemilik");
                     startActivity(i);
                     finish();
                 }
 
                 if (documentSnapshot.getString("isKaryawan") != null){
-//                    Intent i = new Intent(getApplicationContext(), MainActivityKaryawan.class);
-                    Intent i = new Intent(getApplicationContext(), OtpScreen.class);
-                    i.putExtra("phoneNumber", phoneNumber);
-                    i.putExtra("access", "karyawan");
+                    Intent i = new Intent(getApplicationContext(), MainActivityKaryawan.class);
+//                    Intent i = new Intent(getApplicationContext(), OtpScreen.class);
+//                    i.putExtra("phoneNumber", phoneNumber);
+//                    i.putExtra("access", "karyawan");
                     startActivity(i);
                     finish();
                 }
