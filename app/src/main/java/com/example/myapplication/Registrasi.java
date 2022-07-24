@@ -51,6 +51,7 @@ public class Registrasi extends AppCompatActivity {
     boolean valid = true;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    String idPegawai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,15 +107,32 @@ public class Registrasi extends AppCompatActivity {
                             Toast.makeText(Registrasi.this, "Account Created", Toast.LENGTH_SHORT).show();
                             DocumentReference df = fStore.collection("Users").document(user.getUid());
                             Map<String, Object> userInfo = new HashMap<>();
-                            userInfo.put("nama", nama.getText().toString());
-                            userInfo.put("noTelp", noTelp.getText().toString());
-                            userInfo.put("email", email.getText().toString());
+
+                            String sNama = nama.getText().toString();
+                            String snoTelp = noTelp.getText().toString();
+                            String sEmail = email.getText().toString();
+                            String sPassword = password.getText().toString();
+
+                            userInfo.put("nama", sNama);
+                            userInfo.put("noTelp", snoTelp);
+                            userInfo.put("email", sEmail);
 
                             //specify if the user is admin
                             userInfo.put("isPemilik","1");
+                            idPegawai = user.getUid();
 
 
                             df.set(userInfo);
+
+                            CreateDataToServer(sNama, snoTelp, sEmail, sPassword);
+
+                            String newPhone = snoTelp.substring(0,0)+"+62"+snoTelp.substring(1);
+
+                            Intent i = new Intent(getApplicationContext(), OtpScreen.class);
+                            i.putExtra("phoneNumber", newPhone);
+                            startActivity(i);
+
+                            FirebaseAuth.getInstance().signOut();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -123,35 +141,6 @@ public class Registrasi extends AppCompatActivity {
                         }
                     });
                 }
-
-                FirebaseUser user = fAuth.getCurrentUser();
-                if (user!=null){
-                    UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
-                            .setDisplayName(String.valueOf(nama))
-                            .build();
-                    user.updateProfile(request).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-
-                        }
-                    });
-                }
-
-                String sNama = nama.getText().toString();
-                String snoTelp = noTelp.getText().toString();
-                String sEmail = email.getText().toString();
-                String sPassword = password.getText().toString();
-
-                CreateDataToServer(sNama, snoTelp, sEmail, sPassword);
-
-                String newPhone = snoTelp.substring(0,0)+"+62"+snoTelp.substring(1);
-
-//                startActivity(new Intent(getApplicationContext(), Login.class));
-                Intent i = new Intent(getApplicationContext(), OtpScreen.class);
-                i.putExtra("phoneNumber", newPhone);
-                startActivity(i);
-
-                FirebaseAuth.getInstance().signOut();
             }
         });
 
@@ -181,6 +170,7 @@ public class Registrasi extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
+                    params.put("id_pegawai", idPegawai);
                     params.put("nama", nama);
                     params.put("noTelp", noTelp);
                     params.put("email", email);

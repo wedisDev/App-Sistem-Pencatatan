@@ -6,11 +6,31 @@ public class ModelClassMasterTernak {
     private String jumlah_bibit;
 
     private String id_periode;
+    private String nama_kandang;
+    private String id_kandang;
 
-    public ModelClassMasterTernak(String tanggal_datang, String jumlah_bibit, String id_periode){
+    public ModelClassMasterTernak(String tanggal_datang, String jumlah_bibit, String id_periode, String nama_kandang, String id_kandang){
         this.tanggal_datang = tanggal_datang;
         this.jumlah_bibit = jumlah_bibit;
         this.id_periode = id_periode;
+        this.nama_kandang = nama_kandang;
+        this.id_kandang = id_kandang;
+    }
+
+    public String getId_kandang() {
+        return id_kandang;
+    }
+
+    public void setId_kandang(String id_kandang) {
+        this.id_kandang = id_kandang;
+    }
+
+    public String getNama_kandang() {
+        return nama_kandang;
+    }
+
+    public void setNama_kandang(String nama_kandang) {
+        this.nama_kandang = nama_kandang;
     }
 
     public String getId_periode() {

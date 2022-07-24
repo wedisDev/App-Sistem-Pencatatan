@@ -91,8 +91,8 @@ public class OtpScreen extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Intent i = new Intent(getApplicationContext(), Login.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(i);
-                            finish();
                             FirebaseAuth.getInstance().signOut();
                         } else {
                             Toast.makeText(getApplicationContext(),"Incorrect OTP",Toast.LENGTH_SHORT).show();
@@ -240,7 +240,7 @@ public class OtpScreen extends AppCompatActivity {
     private void phoneNumberAuth() {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(fAuth)
-                        .setPhoneNumber("+6282228879229")
+                        .setPhoneNumber(phoneNumber)
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(this)
                         .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

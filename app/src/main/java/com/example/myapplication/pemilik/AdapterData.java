@@ -47,6 +47,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder> {
                 Intent intent = new Intent(context, DataHarianList.class);
 
                 intent.putExtra("id_periode", modelClassMasterTernak.getId_periode());
+                intent.putExtra("nama_kandang", modelClassMasterTernak.getNama_kandang());
+                intent.putExtra("id_kandang", modelClassMasterTernak.getId_kandang());
 
                 context.startActivity(intent);
             }

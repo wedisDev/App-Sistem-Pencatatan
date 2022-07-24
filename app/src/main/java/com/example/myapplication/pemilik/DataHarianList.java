@@ -41,7 +41,7 @@ public class DataHarianList extends AppCompatActivity {
     LinearLayout btnAdd;
     String tampil_id_periode;
     TextView tanggal;
-    String DATA_JSON_STRING, data_json_string;
+    String DATA_JSON_STRING, data_json_string, namaKandang, idKandang;
     ArrayList<ModelClassCatatan> arrayList = new ArrayList<>();
     AdapterCatatan adapterTernak;
     private RecyclerView recyclerView;
@@ -53,6 +53,7 @@ public class DataHarianList extends AppCompatActivity {
 
         btnAdd = findViewById(R.id.buttonAdd);
         tanggal = findViewById(R.id.tanggal);
+        TextView judul = findViewById(R.id.judul);
 
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("EEEE, dd MMMM yyyy");
@@ -60,6 +61,10 @@ public class DataHarianList extends AppCompatActivity {
         tanggal.setText(dateFormat.format(new Date()));
 
         tampil_id_periode = getIntent().getStringExtra("id_periode");
+        namaKandang = getIntent().getStringExtra("nama_kandang");
+        idKandang = getIntent().getStringExtra("id_kandang");
+
+        judul.setText(namaKandang);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +73,7 @@ public class DataHarianList extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), InsertDataHarian.class);
 
                 intent.putExtra("id_periode", tampil_id_periode);
+                intent.putExtra("id_kandang", idKandang);
                 startActivity(intent);
 //                startActivity(new Intent(getApplicationContext(), InsertDataHarian.class));
             }

@@ -121,15 +121,17 @@ public class DataFragmentKaryawan extends Fragment {
             try {
                 JSONObject object = new JSONObject(data_json_string);
                 JSONArray serverResponse = object.getJSONArray("server_response");
-                String tanggal_datang, jumlah_bibit, id_periode;
+                String tanggal_datang, jumlah_bibit, id_periode, nama_kandang, id_kandang;
 
                 for (int i=0; i < serverResponse.length(); i++){
                     JSONObject jsonObject = serverResponse.getJSONObject(i);
                     tanggal_datang = jsonObject.getString("tanggal_datang");
                     jumlah_bibit = jsonObject.getString("jumlah_bibit");
                     id_periode = jsonObject.getString("id_periode");
+                    nama_kandang = jsonObject.getString("nama_kandang");
+                    id_kandang = jsonObject.getString("id_kandang");
 
-                    arrayList.add(new ModelClassMasterTernak(tanggal_datang, jumlah_bibit, id_periode));
+                    arrayList.add(new ModelClassMasterTernak(tanggal_datang, jumlah_bibit, id_periode, nama_kandang, id_kandang));
                 }
 
                 adapterTernak.notifyDataSetChanged();
