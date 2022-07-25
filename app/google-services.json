@@ -7,17 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:935226796225:android:ca22f5aa13f4e857144c40",
+        "mobilesdk_app_id": "1:935226796225:android:77c456fd64ce139c144c40",
         "android_client_info": {
-          "package_name": "com.example.myapplication"
+          "package_name": "com.example.ternakin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "935226796225-5rr4u1gt2itc2gpumhbjuhj0revtrf2n.apps.googleusercontent.com",
+          "client_id": "935226796225-3olmhtqtrg3q4verpuj2l600775mkh1u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.myapplication",
+            "package_name": "com.example.ternakin",
+            "certificate_hash": "d562872a55b166e7e2c67ad7f1f4465194902f84"
+          }
+        },
+        {
+          "client_id": "935226796225-mpfnho1qn8siljnlbk36jhmvb4vop7ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ternakin",
             "certificate_hash": "de0cd5164184a9cfd4f7589426fa98bec9e0d72a"
           }
         },

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    package="com.example.ternakin">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,52 +16,52 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".pemilik.InsertDataHarian"
+            android:name="com.example.ternakin.pemilik.InsertDataHarian"
             android:exported="false" />
         <activity
-            android:name=".pemilik.DataHarianList"
+            android:name="com.example.ternakin.pemilik.DataHarianList"
             android:exported="false" />
         <activity
-            android:name=".pemilik.EditAkun"
+            android:name="com.example.ternakin.pemilik.EditAkun"
             android:exported="false" />
         <activity
-            android:name=".OtpScreen"
+            android:name="com.example.ternakin.OtpScreen"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterTernak.DetailMasterTernak"
+            android:name="com.example.ternakin.pemilik.masterTernak.DetailMasterTernak"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterKandang.EditMasterKandang"
+            android:name="com.example.ternakin.pemilik.masterKandang.EditMasterKandang"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterTernak.InsertMasterTernak"
+            android:name="com.example.ternakin.pemilik.masterTernak.InsertMasterTernak"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterKandang.AddMasterKandang"
+            android:name="com.example.ternakin.pemilik.masterKandang.AddMasterKandang"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterKandang.MasterKandang"
+            android:name="com.example.ternakin.pemilik.masterKandang.MasterKandang"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterTernak.MasterTernak"
+            android:name="com.example.ternakin.pemilik.masterTernak.MasterTernak"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterpakan.UpdatePakan"
+            android:name="com.example.ternakin.pemilik.masterpakan.UpdatePakan"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterpakan.MasterPakan"
+            android:name="com.example.ternakin.pemilik.masterpakan.MasterPakan"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterkaryawan.AddDataKaryawan"
+            android:name="com.example.ternakin.pemilik.masterkaryawan.AddDataKaryawan"
             android:exported="false" />
         <activity
-            android:name=".pemilik.masterkaryawan.MasterKaryawan"
+            android:name="com.example.ternakin.pemilik.masterkaryawan.MasterKaryawan"
             android:exported="false" />
         <activity
-            android:name=".pemilik.UserProfile"
+            android:name="com.example.ternakin.pemilik.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.ternakin.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,16 +70,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".karyawan.MainActivityKaryawan"
+            android:name="com.example.ternakin.karyawan.MainActivityKaryawan"
             android:exported="false" />
         <activity
-            android:name=".Registrasi"
+            android:name="com.example.ternakin.Registrasi"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.example.ternakin.Login"
             android:exported="false" />
         <activity
-            android:name=".pemilik.MainActivity"
+            android:name="com.example.ternakin.pemilik.MainActivity"
             android:exported="false" />
 
         <meta-data
