@@ -7,7 +7,7 @@ public class ModelKandang {
 
     private String id_kandang;
 
-    ModelKandang(String nama_kandang, String kapasitas, String id_kandang){
+    public ModelKandang(String nama_kandang, String kapasitas, String id_kandang){
         this.nama_kandang = nama_kandang;
         this.kapasitas = kapasitas;
         this.id_kandang = id_kandang;

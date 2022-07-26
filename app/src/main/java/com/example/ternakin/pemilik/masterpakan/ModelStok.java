@@ -4,9 +4,13 @@ public class ModelStok {
     private String nama_pakan;
     private String stok_pakan;
 
-    ModelStok(String nama_pakan, String stok_pakan){
+    public ModelStok(String nama_pakan, String stok_pakan){
         this.nama_pakan = nama_pakan;
         this.stok_pakan = stok_pakan;
+    }
+
+    public ModelStok(String nama_pakan){
+        this.nama_pakan = nama_pakan;
     }
 
     public String getNama_pakan() {

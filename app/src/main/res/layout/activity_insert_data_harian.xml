@@ -148,15 +148,13 @@
                 android:textSize="13dp"
                 android:textColor="@color/primary"
                 android:fontFamily="@font/poppins"/>
-            <EditText
+            <Spinner
                 android:id="@+id/kodePakan"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:inputType="text"
                 android:background="@drawable/bg_input_soft"
                 android:padding="10dp"
                 android:layout_marginTop="5dp"
-                android:textColorHint="@color/primarynd"
                 android:textColor="@color/primary"/>
         </LinearLayout>
 

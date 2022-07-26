@@ -154,7 +154,7 @@ public class DataFragmentPemilik extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            json_url = DBContract.SERVER_TAMPIL_MASTER_TERNAK;
+            json_url = DBContract.SERVER_GET_LIST_TERNAK;
         }
 
         @Override
