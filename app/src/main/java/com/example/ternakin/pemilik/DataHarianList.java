@@ -54,12 +54,13 @@ public class DataHarianList extends AppCompatActivity {
     String tampil_id_periode;
     TextView tanggal;
     Button selesai;
-    String DATA_JSON_STRING, data_json_string, namaKandang, idKandang;
+    String DATA_JSON_STRING, data_json_string, namaKandang, idKandang, jumlah_bibit;
     ArrayList<ModelClassCatatan> arrayList = new ArrayList<>();
     AdapterCatatan adapterTernak;
     private RecyclerView recyclerView;
     int berat = 0;
     int hasil = 0;
+    int totalHasil = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +80,15 @@ public class DataHarianList extends AppCompatActivity {
         tampil_id_periode = getIntent().getStringExtra("id_periode");
         namaKandang = getIntent().getStringExtra("nama_kandang");
         idKandang = getIntent().getStringExtra("id_kandang");
+        jumlah_bibit = getIntent().getStringExtra("jumlah_bibit");
 
         judul.setText(namaKandang);
 
         selesai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreateDataToServer(dateFormat.format(new Date()).toString(), String.valueOf(berat), String.valueOf(hasil));
+                totalHasil = Integer.parseInt(jumlah_bibit)-hasil;
+                CreateDataToServer(dateFormat.format(new Date()).toString(), String.valueOf(berat), String.valueOf(totalHasil));
             }
         });
 
@@ -138,10 +141,10 @@ public class DataHarianList extends AppCompatActivity {
                     jumlah_pakan = jsonObject.getString("jumlah_pakan");
 
                     berat = berat + Integer.parseInt(berat_badan);
+                    hasil = hasil + Integer.parseInt(jumlah_mati);
 
                     arrayList.add(new ModelClassCatatan(pakan_harian, berat_badan, tanggal_catatan, jumlah_mati, jumlah_kaling, kode_pakan, sisa_ayam, umur_ayam, jumlah_pakan));
                 }
-                hasil = serverResponse.length();
 
                 adapterTernak.notifyDataSetChanged();
             } catch (JSONException e) {
@@ -219,7 +222,7 @@ public class DataHarianList extends AppCompatActivity {
                                 String resp = jsonObject.getString("server_response");
 
                                 finish();
-                                Toast.makeText(getApplicationContext(), "Tambah catatan berhasil", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Periode berhasil di selesaikan!", Toast.LENGTH_SHORT).show();
 //                                if (resp.equals("{\"server_response\":[{\"status\":\"1\"}]}")){
 //                                } else {
 //                                    Log.d("TAG " , "onResponse: errror "+resp);

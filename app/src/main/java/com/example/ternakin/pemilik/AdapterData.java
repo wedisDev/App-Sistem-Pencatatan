@@ -49,6 +49,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder> {
                 intent.putExtra("id_periode", modelClassMasterTernak.getId_periode());
                 intent.putExtra("nama_kandang", modelClassMasterTernak.getNama_kandang());
                 intent.putExtra("id_kandang", modelClassMasterTernak.getId_kandang());
+                intent.putExtra("jumlah_bibit", modelClassMasterTernak.getJumlah_bibit());
 
                 context.startActivity(intent);
             }
