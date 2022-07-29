@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -48,7 +49,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataHarianList extends AppCompatActivity {
+public class DataHarianList extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     LinearLayout btnAdd;
     String tampil_id_periode;
@@ -61,6 +62,7 @@ public class DataHarianList extends AppCompatActivity {
     int berat = 0;
     int hasil = 0;
     int totalHasil = 0;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,9 @@ public class DataHarianList extends AppCompatActivity {
         tanggal = findViewById(R.id.tanggal);
         TextView judul = findViewById(R.id.judul);
         selesai = findViewById(R.id.selesai);
+        swipeRefreshLayout = findViewById(R.id.refresh);
+
+        swipeRefreshLayout.setOnRefreshListener(this);
 
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
@@ -111,6 +116,10 @@ public class DataHarianList extends AppCompatActivity {
         adapterTernak = new AdapterCatatan(getApplicationContext(), arrayList);
         recyclerView.setAdapter(adapterTernak);
 
+        getData();
+    }
+
+    void getData() {
         getJSON();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -122,7 +131,7 @@ public class DataHarianList extends AppCompatActivity {
 
     private void readData() {
         if (checkNetworkConnection()) {
-//            arrayList.clear();
+            arrayList.clear();
             try {
                 JSONObject object = new JSONObject(data_json_string);
                 JSONArray serverResponse = object.getJSONArray("server_response");
@@ -140,7 +149,7 @@ public class DataHarianList extends AppCompatActivity {
                     umur_ayam = jsonObject.getString("umur_ayam");
                     jumlah_pakan = jsonObject.getString("jumlah_pakan");
 
-                    berat = berat + Integer.parseInt(berat_badan);
+                    berat = Integer.parseInt(berat_badan);
                     hasil = hasil + Integer.parseInt(jumlah_mati);
 
                     arrayList.add(new ModelClassCatatan(pakan_harian, berat_badan, tanggal_catatan, jumlah_mati, jumlah_kaling, kode_pakan, sisa_ayam, umur_ayam, jumlah_pakan));
@@ -161,6 +170,12 @@ public class DataHarianList extends AppCompatActivity {
 
     public void getJSON() {
         new DataHarianList.BackgroundTask().execute();
+    }
+
+    @Override
+    public void onRefresh() {
+        getData();
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @SuppressLint("StaticFieldLeak")

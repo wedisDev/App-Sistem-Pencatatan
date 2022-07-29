@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ import java.util.ArrayList;
  * Use the {@link DataFragmentPemilik#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DataFragmentPemilik extends Fragment {
+public class DataFragmentPemilik extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,6 +56,7 @@ public class DataFragmentPemilik extends Fragment {
     private Adapter adapter;
     ArrayList<ModelClassMasterTernak> arrayList = new ArrayList<>();
     AdapterData adapterTernak;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     public DataFragmentPemilik() {
         // Required empty public constructor
@@ -99,7 +101,15 @@ public class DataFragmentPemilik extends Fragment {
         recyclerView.setHasFixedSize(true);
         adapterTernak = new AdapterData(getActivity(), arrayList);
         recyclerView.setAdapter(adapterTernak);
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(this);
 
+        getData();
+
+        return view;
+    }
+
+    private void getData() {
         getJSON();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -107,13 +117,11 @@ public class DataFragmentPemilik extends Fragment {
                 readData();
             }
         }, 100);
-
-        return view;
     }
 
     private void readData() {
         if (checkNetworkConnection()) {
-//            arrayList.clear();
+            arrayList.clear();
             try {
                 JSONObject object = new JSONObject(data_json_string);
                 JSONArray serverResponse = object.getJSONArray("server_response");
@@ -145,6 +153,12 @@ public class DataFragmentPemilik extends Fragment {
 
     public void getJSON() {
         new DataFragmentPemilik.BackgroundTask().execute();
+    }
+
+    @Override
+    public void onRefresh() {
+        getData();
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @SuppressLint("StaticFieldLeak")
